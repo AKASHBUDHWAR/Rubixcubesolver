@@ -38,7 +38,7 @@ class RubiksCube {
     };
     virtual COLOR getColor(FACE face,unsigned row,unsigned col) const =0;
     static char getColorLetter(COLOR color);
-    virtual bool isSolved()=0;
+    virtual bool isSolved() const=0;
     static string getMove(MOVE ind);
     void print() const;
     vector<MOVE> randomShuffleCube(unsigned int times);
@@ -69,6 +69,7 @@ class RubiksCube {
 
 
 };
+
 
 
 

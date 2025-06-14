@@ -20,6 +20,7 @@ char RubiksCube::getColorLetter(COLOR color) {
             return 'O';
     }
 }
+
 string RubiksCube::getMove(MOVE ind) {
     switch (ind) {
         case MOVE::L:
@@ -292,4 +293,19 @@ vector<RubiksCube::MOVE> RubiksCube::randomShuffleCube(unsigned int times) {
         this->move(static_cast<MOVE>(selectMove));
     }
     return moves_performed;
+}
+bool  RubiksCube::isSolved() {
+    for (int row = 0; row <= 2; row++) {
+        for (int col = 0; col <= 2; col++) {
+            if (getColorLetter(getColor(FACE::UP, row, col))!='W') return false;
+            if (getColorLetter(getColor(FACE::FRONT, row, col))!='R') return false;
+            if (getColorLetter(getColor(FACE::LEFT, row, col))!='G') return false;
+            if (getColorLetter(getColor(FACE::RIGHT, row, col))!='B') return false;
+            if (getColorLetter(getColor(FACE::BACK, row, col))!='O') return false;
+            if (getColorLetter(getColor(FACE::DOWN, row, col))!='Y') return false;
+
+        }
+
+    }
+    return true;
 }
