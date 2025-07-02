@@ -74,10 +74,10 @@ class RubiksCubeBitboard: public RubiksCube {
         uint64_t clr3=(bitboard[1]&(one_8<<(8 * 2)))>>(8*2);
         this->rotateSide(1,0,1,2,2,0,1,2);
         this->rotateSide(2,0,1,2,3,0,1,2);
-        this->rotateSide(3,0,1,2,4,0,1,4);
+        this->rotateSide(3,0,1,2,4,0,1,2);
         bitboard[4]=(bitboard[4]&~(one_8<<(8 * 0)))|(clr1<<(8*0));
-        bitboard[4]=(bitboard[4]&~(one_8<<(8 * 1)))|(clr1<<(8*1));
-        bitboard[4]=(bitboard[4]&~(one_8<<(8 * 2)))|(clr1<<(8*2));
+        bitboard[4]=(bitboard[4]&~(one_8<<(8 * 1)))|(clr2<<(8*1));
+        bitboard[4]=(bitboard[4]&~(one_8<<(8 * 2)))|(clr3<<(8*2));
         return *this;
     }
 RubiksCube &u2() override {
@@ -156,10 +156,10 @@ RubiksCube &u2() override {
 
         this->rotateSide(0, 2, 3, 4, 2, 2, 3, 4);
         this->rotateSide(2, 2, 3, 4, 5, 2, 3, 4);
-        this->rotateSide(5, 2, 3, 4, 4, 7, 6, 0);
+        this->rotateSide(5, 2, 3, 4, 4, 6, 7, 0);
 
-        bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 7))) | (clr1 << (8 * 7));
-        bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 6))) | (clr2 << (8 * 6));
+        bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 7))) | (clr2 << (8 * 7));
+        bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 6))) | (clr1 << (8 * 6));
         bitboard[4] = (bitboard[4] & ~(one_8 << (8 * 0))) | (clr3 << (8 * 0));
 
         return *this;

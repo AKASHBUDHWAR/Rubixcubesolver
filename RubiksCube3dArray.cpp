@@ -75,7 +75,7 @@ public:
         this->rotateface(1);
         char tmp[3]={};
         for(int i=0;i<3;i++) tmp[i]=cube[4][2-i][2];
-        for(int i=0;i<3;i++) cube[4][2-i][0]=cube[5][i][0];
+        for(int i=0;i<3;i++) cube[4][2-i][2]=cube[5][i][0];
         for(int i=0;i<3;i++) cube[5][i][0]=cube[2][i][0];
         for(int i=0;i<3;i++) cube[2][i][0]=cube[0][i][0];
         for(int i=0;i<3;i++) cube[0][i][0]=tmp[i];

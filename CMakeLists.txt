@@ -8,4 +8,20 @@ add_executable(Rubixcubesolver main.cpp
         RubiksCube.h
         RubiksCube3dArray.cpp
         Rubikscube1dArray.cpp
-        RubiksCubeBitboard.cpp)
+        RubiksCubeBitboard.cpp
+        DFSSolver.h
+        BFSSolver.h
+        IDDFSSolver.h
+        math.cpp
+        math.h
+        NibbleArray.cpp
+        NibbleArray.h
+        PatternDatabase.cpp
+        PatternDatabase.h
+        CornerPatternDatabase.cpp
+        CornerPatternDatabase.h
+        CornerDBMaker.cpp
+        CornerDBMaker.h
+        PermutationIndexer.h
+        IDAstarSolver.h
+)

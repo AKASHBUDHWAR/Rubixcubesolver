@@ -294,7 +294,7 @@ vector<RubiksCube::MOVE> RubiksCube::randomShuffleCube(unsigned int times) {
     }
     return moves_performed;
 }
-bool  RubiksCube::isSolved() {
+bool  RubiksCube::isSolved() const {
     for (int row = 0; row <= 2; row++) {
         for (int col = 0; col <= 2; col++) {
             if (getColorLetter(getColor(FACE::UP, row, col))!='W') return false;
